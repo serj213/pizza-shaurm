@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+import Header from './Components/Header/Header';
+import FirstScreen from './Components/FirstScreen/FirstScreen';
+import Promotion from './Components/Promotion/Promotion';
+import SpecialOffers from './Components/SpecialOffers/SpecialOffers';
+import Carts from './Components/Carts/Carts';
+
+import products from './products.json';
+
+
+
+const App = () => {
+
+
+  const [productsList, setProductsLists] = React.useState([]);
+
+  React.useEffect(() => {
+    setProductsLists(products);
+  }, [])
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='wrapper'>
+      <Header />
+      <FirstScreen />
+      <Promotion />
+      <SpecialOffers />
+      <Carts productsList={productsList}/>
     </div>
   );
 }

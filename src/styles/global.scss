@@ -1,0 +1,173 @@
+@import './vars.scss';
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-weight: 400;
+	font-family: "Gilroy";
+	font-size: 15px;
+	line-height: calc(20 / 15 * 100%);
+	color: $text;
+	background-color: $white;
+}
+
+.wrapper {
+	overflow-x: hidden;
+}
+
+
+.btn {
+	display: inline-block;
+	font-size: 15px;
+	line-height: calc(18 / 15 * 100%);
+	background-color: $red;
+	border-radius: 8px;
+	color: $white;
+	text-transform: uppercase;
+	transition: background-color 0.2s linear;
+	span {
+		display: inline-block;
+		margin-right: 6px;
+		font-weight: 800;
+		letter-spacing: 0.6px;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $hoverRed;
+		}
+	}
+}
+
+.shedule-desktop {
+	display: block;
+	@media (max-width: $tablet) {
+		display: none;
+	}
+}
+
+.shedule-mobile {
+	display: none;
+	@media (max-width: $tablet) {
+		text-align: center;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.slider-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 21px;
+	position: relative;
+	&__left {
+		display: flex;
+		align-items: center;
+		flex: 0 0 50%;
+	}
+	@media (max-width: $mobile) {
+		margin: 0 0 16px;
+	}
+}
+
+.name-block {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 100%;
+	color: $black;
+	letter-spacing: 0.12px;
+	margin-right: 16px;
+
+	@media (max-width: $mobile) {
+		font-size: 17px;
+	}
+
+	@media (max-width: $iphone5) {
+		margin-right: 0;
+	}
+}
+
+.slider-top {
+}
+
+.swiper {
+	overflow: visible;
+}
+
+.swiper-navigation {
+	display: flex;
+	@media (max-width: $mobile) {
+		display: none;
+	}
+}
+
+.navigation-custom {
+	display: flex;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&__prev,
+	&__next {
+		position: static;
+		display: block;
+		width: 28px;
+		height: 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: #c1c1d4;
+		margin-top: 0;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+
+	&__next {
+		margin-right: 18px;
+	}
+}
+
+.pagination-custom {
+	position: static;
+	display: flex;
+	justify-content: flex-end;
+
+	.swiper-pagination-bullet-active {
+		width: 6px;
+		height: 6px;
+		background-color: $red;
+	}
+	.swiper-pagination-bullet {
+		width: 6px;
+		height: 6px;
+		&:first-child {
+			margin: 0 !important;
+		}
+	}
+
+	.swiper-pagination-bullet + .swiper-pagination-bullet {
+		margin: 0;
+		margin-left: 5px;
+	}
+}
+
+.name-footer {
+	font-family: $proxima;
+	font-weight: 800;
+	font-size: 24px;
+	line-height: calc(38 / 24 * 100%);
+	color: $white;
+}
+
+
+.disable-btn{
+	pointer-events: none;
+	opacity: 0.5;
+}

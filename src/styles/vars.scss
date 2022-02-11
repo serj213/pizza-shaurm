@@ -1,0 +1,28 @@
+$red: #ff0633;
+$white: #ffff;
+$black: #131313;
+$text: #4a4647;
+$colorSecond: #f1f1f9;
+$hoverRed: #d11c3d;
+
+$proxima: "Proxima Nova";
+
+@mixin image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+// ==== breakpoints ======
+
+$desktopMiddle:1600px;
+$desktopSmall:1400px;
+$tabletBig:1200px;
+$tablet:1100px;
+$tabletSmall:820px;
+$mobile:700px;
+$mobileSmall:450px;
+$iphone5:360px;

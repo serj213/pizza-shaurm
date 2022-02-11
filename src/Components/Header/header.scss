@@ -1,0 +1,77 @@
+@import "../../styles/vars.scss";
+@import '../../styles//global.scss';
+.header {
+    position: relative;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        height: 96px;
+        align-items: center;
+
+        @media (max-width: $mobile) {
+            height: 106px;
+        }
+    }
+
+    &__working {
+        color: $red;
+    }
+
+    &__phone {
+        a {
+            font-size: 17px;
+            line-height: 100%;
+            color: $black;
+            transition: color 0.2s linear;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: rgba($black, 0.6);
+                }
+            }
+
+            @media (max-width: $iphone5) {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.header-info {
+    display: flex;
+
+    &__item {
+        font-size: 17px;
+        line-height: calc(18 / 17 * 100%);
+        font-weight: 700;
+        color: $black;
+    }
+
+    &__item + &__item {
+        margin-left: 32px;
+    }
+}
+
+.header-working {
+    color: $red;
+
+    span {
+        display: inline-block;
+    }
+
+    span + span {
+        margin-left: 20px;
+    }
+
+    @media (max-width: $tablet) {
+        span + span {
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .header__address {
+        display: none;
+    }
+}

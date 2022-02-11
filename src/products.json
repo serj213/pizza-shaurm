@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "img": "./carts/01.png",
+        "name": "Напиток",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "drink",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 2,
+        "img": "./carts/01.png",
+        "name": "Пицца",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "pizza",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 3,
+        "img": "./carts/01.png",
+        "name": "Фирменная шаурма",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "shaurm",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 4,
+        "img": "./carts/01.png",
+        "name": "Напиток",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "drink",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 5,
+        "img": "./carts/01.png",
+        "name": "Пицца",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "pizza",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 6,
+        "img": "./carts/01.png",
+        "name": "Фирменная шаурма",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "shaurm",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 4,
+        "img": "./carts/01.png",
+        "name": "Напиток",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "drink",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 5,
+        "img": "./carts/01.png",
+        "name": "Пицца",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "pizza",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 6,
+        "img": "./carts/01.png",
+        "name": "Фирменная шаурма",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "shaurm",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 7,
+        "img": "./carts/01.png",
+        "name": "Напиток",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "drink",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 8,
+        "img": "./carts/01.png",
+        "name": "Пицца",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "pizza",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 9,
+        "img": "./carts/01.png",
+        "name": "Фирменная шаурма",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "shaurm",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 10,
+        "img": "./carts/01.png",
+        "name": "Напиток",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "drink",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 11,
+        "img": "./carts/01.png",
+        "name": "Пицца",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "pizza",
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 12,
+        "img": "./carts/01.png",
+        "name": "Фирменная шаурма",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": "shaurm",
+        "totalPrice": 40,
+        "count": 1
+    }
+]

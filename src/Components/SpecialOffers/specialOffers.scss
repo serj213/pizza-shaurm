@@ -1,0 +1,292 @@
+@import "../../styles/vars.scss";
+@import "../../styles/global.scss";
+
+.special-offers {
+    padding-bottom: 51px;
+    &__item {
+        position: relative;
+        height: 397px;
+        box-shadow: 0px 1.82079px 11.0351px rgba(0, 0, 0, 0.13);
+        padding: 16px;
+
+        @media (max-width: $mobile) {
+            height: 216px;
+        }
+    }
+}
+
+.offers-promotion {
+    width: 100%;
+    background-color: #ffe7eb;
+    display: flex;
+
+    &__icon {
+        position: absolute;
+        top: 29px;
+        left: 29px;
+        width: 71px;
+        height: 71px;
+        z-index: 1;
+        img {
+            @include image;
+            object-fit: contain;
+        }
+
+        @media (max-width: $mobile) {
+            top: 16px;
+            left: 16px;
+            width: 39px;
+            height: 39px;
+        }
+    }
+
+    &__image {
+        position: relative;
+        width: 287px;
+        height: 245px;
+        margin-left: auto;
+        margin-top: auto;
+
+        @media (max-width: $tabletBig) {
+            width: 236px;
+            height: 200px;
+            margin-bottom: 49px;
+        }
+
+        @media (max-width: $tablet) {
+            width: 287px;
+            height: 245px;
+        }
+
+        @media (max-width: $mobile) {
+            width: 156px;
+            height: 133px;
+            margin-top: 25px;
+        }
+
+        img {
+            @include image;
+            @media (max-width: $tabletBig) {
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__content {
+        width: 52%;
+        margin-top: 188px;
+        margin-bottom: 10px;
+
+        @media (max-width: $mobile) {
+            margin-top: 92px;
+        }
+    }
+
+    &__weight {
+        font-weight: 900;
+        font-size: 59px;
+        line-height: calc(73 / 59 * 100%);
+        color: $red;
+        letter-spacing: 0.01em;
+
+        @media (max-width: $mobile) {
+            font-size: 32px;
+        }
+    }
+
+    &__desript {
+        font-size: 23px;
+        line-height: calc(27 / 23 * 100%);
+        color: #000;
+        margin: 0 0 17px;
+
+        @media (max-width: $mobile) {
+            font-size: 12px;
+            margin: 0 0 9px;
+        }
+    }
+
+    &__call-action {
+        font-weight: 800;
+        font-size: 24px;
+        line-height: calc(30 / 24 * 100%);
+        color: #000;
+        letter-spacing: 0.01em;
+
+        @media (max-width: $desktopSmall) {
+            font-size: 20px;
+        }
+
+        @media (max-width: $mobile) {
+            font-size: 13px;
+        }
+    }
+}
+
+.free-shopping {
+    background-color: #edf9ff;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        margin-top: 32px;
+        margin-left: auto;
+        margin-right: 10px;
+
+        @media (max-width: $mobile) {
+            margin-top: 10px;
+        }
+    }
+
+    &__name {
+        font-weight: 900;
+        font-size: 33px;
+        line-height: calc(40 / 33 * 100%);
+        color: $black;
+        letter-spacing: 0.269868px;
+        margin: 0 0 6px;
+
+        @media (max-width: $mobile) {
+            font-size: 20px;
+            margin: 0 0 3px;
+        }
+    }
+
+    &__descript {
+        font-size: 29px;
+        line-height: calc(40 / 29 * 100%);
+        color: #45455c;
+
+        @media (max-width: $mobile) {
+            font-size: 19px;
+        }
+    }
+
+    &__images {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__taxi {
+        position: relative;
+
+        width: 182px;
+        height: 182px;
+        margin-top: 10px;
+
+        @media (max-width: $mobile) {
+            width: 110px;
+            height: 110px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 126px;
+            height: 12px;
+            background: #131313;
+            opacity: 0.7;
+            filter: blur(25.8895px);
+            left: 25px;
+            bottom: 5px;
+            z-index: 1;
+
+            @media (max-width: $mobile) {
+                display: none;
+            }
+        }
+        img {
+            filter: drop-shadow(0px 8.33028px 70.8074px rgba(0, 0, 0, 0.15));
+            @include image;
+        }
+    }
+
+    &__bike {
+        margin-top: 68px;
+        position: relative;
+        width: 179px;
+        height: 132px;
+        margin-right: 28px;
+
+        @media (max-width: $mobile) {
+            width: 134px;
+            height: 93px;
+            margin-right: 0;
+            margin-top: 38px;
+        }
+
+        img {
+            @include image;
+        }
+    }
+}
+
+.map-google {
+    position: relative;
+    background-color: #fffaec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        flex-direction: row;
+    }
+    &__image {
+        position: relative;
+        width: 100%;
+        height: 199px;
+        margin: 0 auto 17px;
+        img {
+            @include image;
+            object-fit: contain;
+        }
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__icon {
+        @media (max-width: $mobile) {
+            position: relative;
+            flex: 0 0 39px;
+            height: 39px;
+            margin-left: 20px;
+            img {
+                @include image;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 51px;
+
+        @media (max-width: $mobile) {
+            padding-right: 0;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        font-weight: 900;
+        font-size: 34px;
+        line-height: calc(41 / 39 * 100%);
+        color: $black;
+        max-width: 283px;
+        padding-left: 3px;
+
+        @media (max-width: $mobile) {
+            font-size: 27px;
+        }
+
+        @media (max-width: $iphone5) {
+            font-size: 23px;
+        }
+        span {
+            color: $red;
+        }
+    }
+}
