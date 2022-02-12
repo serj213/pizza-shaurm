@@ -5,7 +5,7 @@
         "name": "Напиток",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "drink",
+        "type": 4,
         "totalPrice": 40,
         "count": 1
     },
@@ -15,7 +15,7 @@
         "name": "Пицца",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "pizza",
+        "type": 3,
         "totalPrice": 40,
         "count": 1
     },
@@ -25,7 +25,7 @@
         "name": "Фирменная шаурма",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "shaurm",
+        "type": 2,
         "totalPrice": 40,
         "count": 1
     },
@@ -35,7 +35,7 @@
         "name": "Напиток",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "drink",
+        "type": 4,
         "totalPrice": 40,
         "count": 1
     },
@@ -45,7 +45,7 @@
         "name": "Пицца",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "pizza",
+        "type": 3,
         "totalPrice": 40,
         "count": 1
     },
@@ -55,37 +55,7 @@
         "name": "Фирменная шаурма",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "shaurm",
-        "totalPrice": 40,
-        "count": 1
-    },
-    {
-        "id": 4,
-        "img": "./carts/01.png",
-        "name": "Напиток",
-        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
-        "price": 40,
-        "type": "drink",
-        "totalPrice": 40,
-        "count": 1
-    },
-    {
-        "id": 5,
-        "img": "./carts/01.png",
-        "name": "Пицца",
-        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
-        "price": 40,
-        "type": "pizza",
-        "totalPrice": 40,
-        "count": 1
-    },
-    {
-        "id": 6,
-        "img": "./carts/01.png",
-        "name": "Фирменная шаурма",
-        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
-        "price": 40,
-        "type": "shaurm",
+        "type": 2,
         "totalPrice": 40,
         "count": 1
     },
@@ -95,7 +65,7 @@
         "name": "Напиток",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "drink",
+        "type": 4,
         "totalPrice": 40,
         "count": 1
     },
@@ -105,7 +75,7 @@
         "name": "Пицца",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "pizza",
+        "type": 3,
         "totalPrice": 40,
         "count": 1
     },
@@ -115,7 +85,7 @@
         "name": "Фирменная шаурма",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "shaurm",
+        "type": 2,
         "totalPrice": 40,
         "count": 1
     },
@@ -125,14 +95,14 @@
         "name": "Напиток",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "drink",
+        "type": 4,
         "totalPrice": 40,
         "count": 1
     },
     {
         "id": 11,
         "img": "./carts/01.png",
-        "name": "Пицца",
+        "name": 3,
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
         "type": "pizza",
@@ -145,7 +115,37 @@
         "name": "Фирменная шаурма",
         "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
         "price": 40,
-        "type": "shaurm",
+        "type": 2,
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 13,
+        "img": "./carts/01.png",
+        "name": "Напиток",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": 4,
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 14,
+        "img": "./carts/01.png",
+        "name": "Пицца",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": 3,
+        "totalPrice": 40,
+        "count": 1
+    },
+    {
+        "id": 15,
+        "img": "./carts/01.png",
+        "name": "Фирменная шаурма",
+        "composition": "Мясо гриль, капуста, морковка, соус белый/красный, сыр.",
+        "price": 40,
+        "type": 2,
         "totalPrice": 40,
         "count": 1
     }

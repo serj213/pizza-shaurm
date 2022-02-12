@@ -3,60 +3,83 @@ import Container from "../Common/Container/Container";
 import './carts.scss';
 
 
-const Carts = ({ productsList }) => {
+const Carts = ({ productsList, addCartToBasket, checkoutActive }) => {
+
+    const [activeTab, setActiveTab] = React.useState(1);
+    const tabs = [
+        { id: 1, name: 'Все позиции' },
+        { id: 2, name: 'Шаурма' },
+        { id: 3, name: 'Пицца' },
+        { id: 4, name: 'Напитки' },
+
+    ]
+
+    const changeActiveTab = (id) => {
+        setActiveTab(id)
+    }
 
 
     return (
-        <section class="carts">
-            <div class="container">
-                <div class="carts__inner">
-                    <div class="carts__top carts-top">
-                        <div class="carts-top__left">
-                            <h3 class="carts-top__name">
+        <section className="carts">
+            <div className="container">
+                <div className="carts__inner">
+                    <div className="carts__top carts-top">
+                        <div className="carts-top__left">
+                            <h3 className="carts-top__name">
                                 Шаурма Житомир 🌯
                             </h3>
-                            <div class="carts-top__desript">
+                            <div className="carts-top__desript">
                                 ☝️от 250 грн бесплатная доставка ☝️️
                             </div>
                         </div>
 
-                        <div class="tabs__desktop">
-                            <div class="carts-top__tabs tabs">
-                                <div data-shaurm="shaurm" class="tabs__item">Шаурма</div>
-                                <div class="tabs__item tabs__item--active">Все позиции</div>
-                                <div data-pizza="pizza" class="tabs__item">Пицца</div>
-                                <div data-drink="drink" class="tabs__item">Напитки</div>
+                        <div className="tabs__desktop">
+                            <div className="carts-top__tabs tabs">
+
+                                {
+                                    tabs.map(tab => {
+                                        return <div key={tab.id} onClick={() => changeActiveTab(tab.id)}
+                                            className={`tabs__item
+                                            ${activeTab === tab.id && 'tabs__item--active'}`}>
+                                            {tab.name}
+                                        </div>
+                                    })
+                                }
                             </div>
                         </div>
 
                     </div>
 
-                    {/* <div class="tabs__mobile">
-                        <div class="carts-top__tabs tabs">
-                            <div class="tabs__item">Шаурма</div>
-                            <div class="tabs__item tabs__item--active">Все позиции</div>
-                            <div class="tabs__item">Пицца</div>
-                            <div class="tabs__item">Напитки</div>
+                    {/* <div className="tabs__mobile">
+                        <div className="carts-top__tabs tabs">
+                            <div className="tabs__item">Шаурма</div>
+                            <div className="tabs__item tabs__item--active">Все позиции</div>
+                            <div className="tabs__item">Пицца</div>
+                            <div className="tabs__item">Напитки</div>
                         </div>
                     </div>  */}
-
-                    <div class="carts__box">
+                    <div className={`carts__box ${checkoutActive && 'carts__padding-bottom'}`}>
                         {
                             productsList.map(cart => {
                                 return (
-                                    <div id={cart.type} class="carts__item item">
-                                        <div class="item__image">
+                                    <div key={cart.id} id={cart.type}
+                                        className={`carts__item item
+                                        ${activeTab === cart.type ? 'disable' : ''}
+                                        ${activeTab === 1 && 'disable'}
+                                        
+                                    `}>
+                                        <div className="item__image">
                                             <img src={cart.img} alt="" />
                                         </div>
-                                        <div class="item__content">
-                                            <div class="item__name">
+                                        <div className="item__content">
+                                            <div className="item__name">
                                                 {cart.name}
                                             </div>
-                                            <p class="item__composition">
+                                            <p className="item__composition">
                                                 {cart.composition}
                                             </p>
                                         </div>
-                                        <div class="item__cost">
+                                        <div className="item__cost">
                                             <p>
                                                 Cтоимость
                                             </p>
@@ -66,8 +89,9 @@ const Carts = ({ productsList }) => {
                                                 </span>грн
                                             </p>
                                         </div>
-                                        <button onclick='addToBasket(${item.id})'
-                                            class="item__btn btn">
+                                        <button
+                                            onClick={() => addCartToBasket(cart)}
+                                            className="item__btn btn">
                                             <span>🌯</span> добавить в корзину
                                         </button>
                                     </div>

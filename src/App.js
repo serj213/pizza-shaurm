@@ -5,6 +5,7 @@ import FirstScreen from './Components/FirstScreen/FirstScreen';
 import Promotion from './Components/Promotion/Promotion';
 import SpecialOffers from './Components/SpecialOffers/SpecialOffers';
 import Carts from './Components/Carts/Carts';
+import Basket from './Components/Basket/Basket';
 
 import products from './products.json';
 
@@ -14,10 +15,80 @@ const App = () => {
 
 
   const [productsList, setProductsLists] = React.useState([]);
+  const [basketList, setBasketList] = React.useState([]);
+  const [checkoutActive, setCheckoutActive] = React.useState(false);
+  const [basketActive, setBasketActive] = React.useState(false);
+  const [lenghtBasketItem, setLenghtBasketItem] = React.useState(0);
+  const [totalCost, setTotalCost] = React.useState(0);
+
 
   React.useEffect(() => {
     setProductsLists(products);
-  }, [])
+    
+  }, [basketList]);
+
+  React.useEffect(() => {
+    setLenghtBasketItem(basketList.length);
+    sumPriceCheckout();
+
+  }, [basketList])
+
+  const sumPriceCheckout = () => {
+
+    const priceArr = [];
+
+    basketList.forEach(({ totalPrice }) => {
+      priceArr.push(totalPrice)
+    });
+
+    if (basketList.length === 1) {
+      setTotalCost(basketList[0].totalPrice);
+    } else if (basketList.length > 1) {
+      setTotalCost(priceArr.reduce((a, b) => a + b));
+    }else{
+      setTotalCost(0)
+    }
+  }
+
+  const totalPriceBasket = (action) => {
+    const totalPriceArr = [];
+    basketList.forEach(item => {
+      totalPriceArr.push(item.totalPrice);
+    });
+
+    if (action === 'plus') {
+      setTotalCost(totalPriceArr.reduce((a, b) => a + b));
+    } else {
+      setTotalCost(totalPriceArr.reduce((a, b) => a + b));
+    }
+
+  }
+
+  const addCartToBasket = (obj) => {
+
+    const dubble = basketList.find(el => el.id === obj.id);
+
+    if (!dubble) {
+      setBasketList([...basketList, obj]);
+
+    }
+
+    if (!checkoutActive) {
+      setCheckoutActive(true);
+    }
+  }
+
+  const deleteToCart = (id) => {
+    const counterList = basketList.map(item => {
+      if(item.id === id){
+        item.count = 1
+        item.totalPrice = item.price
+      }
+      return item;
+    });
+    const newBasket = counterList.filter(item => item.id !== id);
+    setBasketList(newBasket);
+  }
 
 
 
@@ -25,10 +96,33 @@ const App = () => {
   return (
     <div className='wrapper'>
       <Header />
-      <FirstScreen />
+      <FirstScreen
+        checkoutActive={checkoutActive}
+        setBasketActive={setBasketActive}
+        basketActive={basketActive}
+        lenghtBasketItem={lenghtBasketItem}
+        totalCost={totalCost}
+      />
       <Promotion />
       <SpecialOffers />
-      <Carts productsList={productsList}/>
+      <Carts
+        productsList={productsList}
+        addCartToBasket={addCartToBasket}
+        checkoutActive={checkoutActive}
+      />
+
+      {basketActive && <Basket
+        basketActive={basketActive}
+        basketList={basketList}
+        setBasketActive={setBasketActive}
+        lenghtBasketItem={lenghtBasketItem}
+        totalCost={totalCost}
+        setTotalCost={setTotalCost}
+        setBasketList={setBasketList}
+        totalPriceBasket={totalPriceBasket}
+        deleteToCart={deleteToCart}
+      />}
+
     </div>
   );
 }

@@ -9,7 +9,7 @@ import logoImg from '../../images/logo.png';
 
 const Header = () => {
     return (
-        <header classNameName="header">
+        <header className="header">
             <Container>
                 <div className="header__inner">
                     <div className="header__logo">

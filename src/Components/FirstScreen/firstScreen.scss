@@ -1,5 +1,13 @@
 @import "../../styles/vars.scss";
 
+
+// paralax движение 
+
+:root{
+    --posX:0;
+    --posY:0;
+}
+
 .first-screen {
     &__inner {
         display: flex;
@@ -102,7 +110,7 @@
     &__list-bottomLeft {
         position: absolute;
         z-index: 2;
-
+        transform: translate(calc(var(--posX) * 1px), calc(var(--posY) * 1px));
         @media (max-width: $mobile) {
             z-index: -1;
         }
@@ -111,8 +119,9 @@
     &__list-topRight {
         top: -43px;
         right: -100px;
-        transition: transform 0.7s linear;
-
+        // transition: transform 0.7s linear;
+        
+        // transform: translate(calc(var(--posX) * 2%), calc(var(--posY) * 2%));
         @media (max-width: $tabletBig) {
             width: 109px;
             height: 109px;
@@ -130,8 +139,8 @@
         height: 92px;
         top: 50px;
         left: -11px;
-        transition: transform 0.5s linear;
-
+        // transition: transform 0.5s linear;
+        
         @media (max-width: $tabletBig) {
             width: 68px;
             height: 74px;
@@ -144,8 +153,8 @@
     &__list-bottomRight {
         bottom: -15px;
         right: -35px;
-        transition: transform 0.6s linear;
-
+        // transition: transform 0.6s linear;
+       
         @media (max-width: $tabletBig) {
             width: 107px;
             height: 116px;
@@ -162,8 +171,8 @@
     &__list-bottomLeft {
         left: -86px;
         bottom: -28px;
-        transition: transform 0.4s linear;
-
+        // transition: transform 0.4s linear;
+        
         @media (max-width: $tabletBig) {
             width: 68px;
             height: 74px;
@@ -180,8 +189,8 @@
         height: 611px;
         object-fit: contain;
         margin-bottom: 10px;
-        transition: transform 0.8s linear;
-
+        // transition: transform 0.8s linear;
+        transform: translate(calc(var(--posY) * 1px), calc(var(--posX) * 1px));
         @media (max-width: $desktopSmall) {
             width: 500px;
             height: 486px;

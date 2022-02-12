@@ -21,25 +21,25 @@ import googleMapImg from '../../images/special-offers/google-map.png';
 
 const SpecialOffers = () => {
     return (
-        <section class="special-offers">
+        <section className="special-offers">
             <Container>
-                <div class="special-offers__inner">
-                    <div class="special-offers__top special-offers-top slider-top">
-                        <div class="slider-top__left">
-                            <h4 class="slider-top__title name-block">
+                <div className="special-offers__inner">
+                    <div className="special-offers__top special-offers-top slider-top">
+                        <div className="slider-top__left">
+                            <h4 className="slider-top__title name-block">
                                 Cпециальные предложения
                             </h4>
-                            <div class="special-offers__navigation swiper-navigation ">
-                                <div class="swiper-button-next navigation-custom__next special-offers__next">
+                            <div className="special-offers__navigation swiper-navigation ">
+                                <div className="swiper-button-next navigation-custom__next special-offers__next">
                                     <img src={arrowLeft} alt="" />
                                 </div>
-                                <div class="swiper-button-prev navigation-custom__prev special-offers__prev">
+                                <div className="swiper-button-prev navigation-custom__prev special-offers__prev">
                                     <img src={arrowRight} alt="" />
                                 </div>
                             </div>
                         </div>
 
-                        <div class="special-offers__paginate swiper-pagination pagination-custom">
+                        <div className="special-offers__paginate swiper-pagination pagination-custom">
                         </div>
                     </div>
 
@@ -75,64 +75,64 @@ const SpecialOffers = () => {
                         spaceBetween={20}
                     >
                         <SwiperSlide>
-                            <div class="special-offers__item offers-promotion">
-                                <div class="special-offers__icon offers-promotion__icon">
+                            <div className="special-offers__item offers-promotion">
+                                <div className="special-offers__icon offers-promotion__icon">
                                     <img src={iconImg} alt="" />
                                 </div>
 
-                                <div class="special-offers__content offers-promotion__content">
-                                    <div class="offers-promotion__weight">
+                                <div className="special-offers__content offers-promotion__content">
+                                    <div className="offers-promotion__weight">
                                         3 КГ 🤤
                                     </div>
-                                    <p class="offers-promotion__desript">
+                                    <p className="offers-promotion__desript">
                                         Сочнейшей шаурмы
                                     </p>
-                                    <div class="offers-promotion__call-action">
+                                    <div className="offers-promotion__call-action">
                                         Разыгрываем среди, Вас
                                     </div>
                                 </div>
 
-                                <div class="offers-promotion__image">
+                                <div className="offers-promotion__image">
                                     <img src={shavermaImg} alt="" />
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="special-offers__item free-shopping">
+                            <div className="special-offers__item free-shopping">
 
-                                <div class="special-offers__icon offers-promotion__icon">
+                                <div className="special-offers__icon offers-promotion__icon">
                                     <img src={iconImg} alt="" />
                                 </div>
 
-                                <div class="free-shopping__content">
-                                    <div class="free-shopping__name">
+                                <div className="free-shopping__content">
+                                    <div className="free-shopping__name">
                                         Бесплатная доставка
                                     </div>
-                                    <p class="free-shopping__descript">
+                                    <p className="free-shopping__descript">
                                         по городу от 250грн
                                     </p>
                                 </div>
 
-                                <div class="free-shopping__images">
-                                    <div class="free-shopping__taxi">
+                                <div className="free-shopping__images">
+                                    <div className="free-shopping__taxi">
                                         <img src={taxiImg} alt="" />
                                     </div>
-                                    <div class="free-shopping__bike">
+                                    <div className="free-shopping__bike">
                                         <img src={bikeImg} alt="" />
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="special-offers__item map-google">
-                                <div class="map-google__image">
+                            <div className="special-offers__item map-google">
+                                <div className="map-google__image">
                                     <img src={googleMapImg} alt="" />
                                 </div>
-                                <div class="map-google__bottom">
-                                    <div class="map-google__text">
+                                <div className="map-google__bottom">
+                                    <div className="map-google__text">
                                         <span>Google maps</span> оставил коммент <span>-10%</span> получил
                                     </div>
-                                    <div class="map-google__icon map-google__icon">
+                                    <div className="map-google__icon map-google__icon">
                                         <img src={iconImg} alt="" />
                                     </div>
                                 </div>

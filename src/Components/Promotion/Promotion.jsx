@@ -17,25 +17,25 @@ import cartImgSecond from '../../images/promotion/02.png';
 
 const Promotion = () => {
     return (
-        <section class="promotion">
+        <section className="promotion">
             <Container>
-                <div class="promotion__inner">
-                    <div class="promotion__top promotion-top slider-top">
-                        <div class="slider-top__left">
-                            <h4 class="slider-top__title name-block">
+                <div className="promotion__inner">
+                    <div className="promotion__top promotion-top slider-top">
+                        <div className="slider-top__left">
+                            <h4 className="slider-top__title name-block">
                                 Выгодные акции
                             </h4>
-                            <div class="promotion-item__navigation swiper-navigation ">
-                                <div class="swiper-button-next navigation-custom__next promotion-next">
+                            <div className="promotion-item__navigation swiper-navigation ">
+                                <div className="swiper-button-next navigation-custom__next promotion-next">
                                     <img src={arrowLeft} alt="" />
                                 </div>
-                                <div class="swiper-button-prev navigation-custom__prev promotion-prev">
+                                <div className="swiper-button-prev navigation-custom__prev promotion-prev">
                                     <img src={arrowRight} alt="" />
                                 </div>
                             </div>
                         </div>
 
-                        <div class="promotion__paginate swiper-pagination pagination-custom">
+                        <div className="promotion__paginate swiper-pagination pagination-custom">
                         </div>
 
 
@@ -85,90 +85,90 @@ const Promotion = () => {
                         spaceBetween={20}
                     >
                         <SwiperSlide>
-                            <div class="promotion-item">
-                                <div class="promotion-item__img">
+                            <div className="promotion-item">
+                                <div className="promotion-item__img">
                                     <img src={cartImgFirst} alt="" />
                                 </div>
-                                <div class="promotion-item__content">
-                                    <div class="promotion-item__name">
+                                <div className="promotion-item__content">
+                                    <div className="promotion-item__name">
                                         Две пиццы Мясная + Сырная
                                     </div>
-                                    <p class="promotion-item__cost">
+                                    <p className="promotion-item__cost">
                                         120 гривен
                                     </p>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="promotion-item">
-                                <div class="promotion-item__img">
+                            <div className="promotion-item">
+                                <div className="promotion-item__img">
                                     <img src={cartImgSecond} alt="" />
                                 </div>
-                                <div class="promotion-item__content">
-                                    <div class="promotion-item__name">
+                                <div className="promotion-item__content">
+                                    <div className="promotion-item__name">
                                         Пицца + Шаурма
                                     </div>
-                                    <p class="promotion-item__cost">
+                                    <p className="promotion-item__cost">
                                         120 гривен <span>-25%</span>
                                     </p>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="promotion-item">
-                                <div class="promotion-item__img">
+                            <div className="promotion-item">
+                                <div className="promotion-item__img">
                                     <img src={cartImgFirst} alt="" />
                                 </div>
-                                <div class="promotion-item__content">
-                                    <div class="promotion-item__name">
+                                <div className="promotion-item__content">
+                                    <div className="promotion-item__name">
                                         Две пиццы Мясная + Сырная
                                     </div>
-                                    <p class="promotion-item__cost">
+                                    <p className="promotion-item__cost">
                                         120 гривен
                                     </p>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="promotion-item">
-                                <div class="promotion-item__img">
+                            <div className="promotion-item">
+                                <div className="promotion-item__img">
                                     <img src={cartImgSecond} alt="" />
                                 </div>
-                                <div class="promotion-item__content">
-                                    <div class="promotion-item__name">
+                                <div className="promotion-item__content">
+                                    <div className="promotion-item__name">
                                         Две пиццы Мясная + Сырная
                                     </div>
-                                    <p class="promotion-item__cost">
+                                    <p className="promotion-item__cost">
                                         120 гривен
                                     </p>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="promotion-item">
-                                <div class="promotion-item__img">
+                            <div className="promotion-item">
+                                <div className="promotion-item__img">
                                     <img src={cartImgFirst} alt="" />
                                 </div>
-                                <div class="promotion-item__content">
-                                    <div class="promotion-item__name">
+                                <div className="promotion-item__content">
+                                    <div className="promotion-item__name">
                                         Две пиццы Мясная + Сырная
                                     </div>
-                                    <p class="promotion-item__cost">
+                                    <p className="promotion-item__cost">
                                         120 гривен
                                     </p>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div class="promotion-item">
-                                <div class="promotion-item__img">
+                            <div className="promotion-item">
+                                <div className="promotion-item__img">
                                     <img src={cartImgFirst} alt="" />
                                 </div>
-                                <div class="promotion-item__content">
-                                    <div class="promotion-item__name">
+                                <div className="promotion-item__content">
+                                    <div className="promotion-item__name">
                                         Пицца + Шаурма
                                     </div>
-                                    <p class="promotion-item__cost">
+                                    <p className="promotion-item__cost">
                                         120 гривен <span>-25%</span>
                                     </p>
                                 </div>
