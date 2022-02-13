@@ -5,9 +5,6 @@ import CommunicationContacts from "./CommunicationContacts/CommunicationContacts
 
 import './modal.scss';
 
-
-
-
 const Modal = ({
     basketList,
     setModalActive,
@@ -20,6 +17,8 @@ const Modal = ({
 
     const basketRef = React.useRef(null);
     const [basketActive, setBasketActive] = React.useState(true);
+
+    const [phoneNumberValue, setPhoneNumberValue] = React.useState('');
 
     React.useEffect(() => {
         document.body.addEventListener('click', clickOutside);
@@ -62,9 +61,9 @@ const Modal = ({
     }
 
     const clickBtnBottom = () => {
-        if(basketActive){
+        if (basketActive) {
             setBasketActive(false)
-        }else{
+        } else {
             console.log('оформаляем');
         }
     }
@@ -85,7 +84,10 @@ const Modal = ({
                         deleteToCart={deleteToCart}
                     />
                         :
-                        <CommunicationContacts />
+                        <CommunicationContacts
+                            phoneNumberValue={phoneNumberValue}
+                            setPhoneNumberValue={setPhoneNumberValue}
+                        />
 
                 }
 
