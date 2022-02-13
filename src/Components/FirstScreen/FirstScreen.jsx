@@ -16,7 +16,7 @@ import telegramImg from '../../images/socials/telegram.svg';
 
 const FirstScreen = ({
     checkoutActive,
-    setBasketActive,
+    setModalActive,
     lenghtBasketItem,
     totalCost
 }) => {
@@ -35,7 +35,7 @@ const FirstScreen = ({
 
      const visibleBasket = () => {
 
-        setBasketActive(true);
+        setModalActive(true);
     }
 
 

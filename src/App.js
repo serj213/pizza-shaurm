@@ -5,7 +5,7 @@ import FirstScreen from './Components/FirstScreen/FirstScreen';
 import Promotion from './Components/Promotion/Promotion';
 import SpecialOffers from './Components/SpecialOffers/SpecialOffers';
 import Carts from './Components/Carts/Carts';
-import Basket from './Components/Basket/Basket';
+import Modal from './Components/Modal/Modal';
 
 import products from './products.json';
 
@@ -17,14 +17,14 @@ const App = () => {
   const [productsList, setProductsLists] = React.useState([]);
   const [basketList, setBasketList] = React.useState([]);
   const [checkoutActive, setCheckoutActive] = React.useState(false);
-  const [basketActive, setBasketActive] = React.useState(false);
+  const [modalActive, setModalActive] = React.useState(false);
   const [lenghtBasketItem, setLenghtBasketItem] = React.useState(0);
   const [totalCost, setTotalCost] = React.useState(0);
 
 
   React.useEffect(() => {
     setProductsLists(products);
-    
+
   }, [basketList]);
 
   React.useEffect(() => {
@@ -45,7 +45,7 @@ const App = () => {
       setTotalCost(basketList[0].totalPrice);
     } else if (basketList.length > 1) {
       setTotalCost(priceArr.reduce((a, b) => a + b));
-    }else{
+    } else {
       setTotalCost(0)
     }
   }
@@ -80,7 +80,7 @@ const App = () => {
 
   const deleteToCart = (id) => {
     const counterList = basketList.map(item => {
-      if(item.id === id){
+      if (item.id === id) {
         item.count = 1
         item.totalPrice = item.price
       }
@@ -98,8 +98,7 @@ const App = () => {
       <Header />
       <FirstScreen
         checkoutActive={checkoutActive}
-        setBasketActive={setBasketActive}
-        basketActive={basketActive}
+        setModalActive={setModalActive}
         lenghtBasketItem={lenghtBasketItem}
         totalCost={totalCost}
       />
@@ -111,10 +110,10 @@ const App = () => {
         checkoutActive={checkoutActive}
       />
 
-      {basketActive && <Basket
-        basketActive={basketActive}
+      {modalActive && <Modal
+        modalActive={modalActive}
         basketList={basketList}
-        setBasketActive={setBasketActive}
+        setModalActive={setModalActive}
         lenghtBasketItem={lenghtBasketItem}
         totalCost={totalCost}
         setTotalCost={setTotalCost}
