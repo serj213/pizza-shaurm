@@ -1,4 +1,5 @@
 import React from "react";
+import validator from 'validator';
 
 import Basket from "./Basket/Basket";
 import CommunicationContacts from "./CommunicationContacts/CommunicationContacts";
@@ -19,6 +20,8 @@ const Modal = ({
     const [basketActive, setBasketActive] = React.useState(true);
 
     const [phoneNumberValue, setPhoneNumberValue] = React.useState('');
+    const [errorValidate, setErrorValidate] = React.useState(false);
+
 
     React.useEffect(() => {
         document.body.addEventListener('click', clickOutside);
@@ -64,12 +67,19 @@ const Modal = ({
         if (basketActive) {
             setBasketActive(false)
         } else {
-            console.log('оформаляем');
+            let reg = /^\+7\s\(\d{3}\)\s(\d{3})-(\d{2})-(\d{2})$/
+
+            if (!reg.test(phoneNumberValue)) {
+                setErrorValidate(true)
+                console.log('нет');
+            }else{
+                console.log('верно');
+                
+            }
         }
     }
 
-
-
+  
 
 
     return (
@@ -82,17 +92,16 @@ const Modal = ({
                         minusCountClick={minusCountClick}
                         plusCountClick={plusCountClick}
                         deleteToCart={deleteToCart}
+
                     />
                         :
                         <CommunicationContacts
                             phoneNumberValue={phoneNumberValue}
                             setPhoneNumberValue={setPhoneNumberValue}
+                            errorValidate={errorValidate}
                         />
 
                 }
-
-
-
 
                 <div className="basket__bottom basket-bottom">
                     <div className="basket-bottom__left">
@@ -108,9 +117,10 @@ const Modal = ({
                                 <span id="basketBottomPrice">{totalCost}</span> грн
                             </p>
                         </div>
+                        
 
-
-                        <button onClick={clickBtnBottom} className="basket-bottom__btn btn">
+                        <button onClick={clickBtnBottom} className={`basket-bottom__btn btn`
+                        }>
                             🤤 Оформить заказ
                         </button>
 

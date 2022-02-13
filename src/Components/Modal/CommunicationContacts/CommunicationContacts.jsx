@@ -1,12 +1,13 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
-import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber } from 'react-phone-number-input/input'
+import NumberFormat from 'react-number-format';
+
 
 import './communicationContacts.scss';
 
 import upImg from '../../../images/up.png'
 
-const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue }) => {
+const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue, errorValidate }) => {
 
     const [activeTypePay, setActiveTypePay] = React.useState(0);
 
@@ -22,10 +23,10 @@ const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue }) => {
     let minutes = new Date().getMinutes() + 15;
     let currentTime = `${currentHours}:${minutes > 60 ? (minutes - 60) : minutes}`
 
-    const onChangePhoneNumber = (e) => {
 
+
+    const onChangePhoneNumber = (e) => {
         setPhoneNumberValue(e.target.value)
-        console.log('phoneNumberValue', e.target.value.length);
     }
 
     return (
@@ -36,25 +37,19 @@ const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue }) => {
             <div className="contacts-communicate__box">
                 <div className="contacts-communicate__mainInfo">
                     <div className="contacts-communicate__top">
-                        <div className="contacts-communicate__input phone-success">
+                        <div className="contacts-communicate__input">
                             <div className="contacts-communicate__labels">
                                 <span>Номер телефона <span>*</span></span>
                                 <span>(обязательно)</span>
                             </div>
-                            {/* <NumberFormat
-                                value={phoneNumberValue}
-                                onChange={onChangePhoneNumber}
-                                placeholder='Введите номер'
-                                format="+(380) ##-#######"
-                                mask="_" /> */}
-                            <PhoneInput
-                                country='UA'
-                                displayInitialValueAsLocalNumber
-                                placeholder="Enter phone number"
-                                value={phoneNumberValue && formatPhoneNumberIntl(phoneNumberValue)}
-                                onChange={setPhoneNumberValue}
-                            />
 
+                            <NumberFormat
+                                type='tel'
+                                value={phoneNumberValue}
+                                format="+7 (###) ###-##-##"
+                                onChange={onChangePhoneNumber}
+                                className={`${errorValidate && 'input-error'}`}
+                            />
                         </div>
 
                         <div className="contacts-communicate__input">
