@@ -9,19 +9,18 @@ import leftTop from '../../images/first-screen/list-leftTop.png';
 import rightBottom from '../../images/first-screen/list-rightBottom.png';
 import leftBottom from '../../images/first-screen/list-leftBottom.png';
 import pizzaImg from '../../images/first-screen/pizza.png';
-import ticktokImg from '../../images/socials/ticktok.svg';
-import instaImg from '../../images/socials/insta.svg';
-import telegramImg from '../../images/socials/telegram.svg';
+import Socials from "../Common/Socials/Socials";
 
 
 const FirstScreen = ({
     checkoutActive,
     setModalActive,
     lenghtBasketItem,
-    totalCost
+    totalCost,
+    orderWithDeliveryBtn
 }) => {
 
-   
+
     const root = React.useMemo(() => document.querySelector(':root'));
 
 
@@ -33,7 +32,7 @@ const FirstScreen = ({
     }
 
 
-     const visibleBasket = () => {
+    const visibleBasket = () => {
 
         setModalActive(true);
     }
@@ -54,7 +53,7 @@ const FirstScreen = ({
                             с доставкой на дом от 250 грн
                         </p>
 
-                        <button className="content-text__btn btn">
+                        <button onClick={orderWithDeliveryBtn} className="content-text__btn btn">
                             <span>🤤</span> Заказать с доставкой
                         </button>
 
@@ -89,23 +88,7 @@ const FirstScreen = ({
             <div className="first-screen__bottom content-bottom">
                 <Container>
                     <div className="content-bottom__inner">
-                        <ul className="first-screen__socials socials">
-                            <li>
-                                <a target="_blank" href="#" className="socials__link">
-                                    <img src={ticktokImg} alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="#" className="socials__link">
-                                    <img src={instaImg} alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="#" className="socials__link">
-                                    <img src={telegramImg} alt="" />
-                                </a>
-                            </li>
-                        </ul>
+                        <Socials />
                         <span>
                             Подпишись и получи скидку -10%
                         </span>

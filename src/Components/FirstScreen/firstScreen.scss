@@ -71,7 +71,7 @@
     &__btn {
         padding: 15px 43px;
         @media (max-width: $tablet) {
-            display: none;
+            display: none !important;
         }
     }
 }
@@ -256,14 +256,7 @@
     }
 }
 
-.socials {
-    display: flex;
-    margin-right: 16px;
 
-    li + li {
-        margin-left: 32px;
-    }
-}
 
 .checkout {
     position: fixed;

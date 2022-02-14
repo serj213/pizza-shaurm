@@ -1,0 +1,63 @@
+@import "../../../styles/vars.scss";
+
+.accepted {
+    &__body {
+        text-align: center;
+        width: 846px;
+        height: 389px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+
+        @media (max-width: $mobileSmall) {
+            height: 343px;
+        }
+    }
+
+    &__title {
+        max-width: 233px;
+        font-family: $proxima;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: calc(28 / 24 * 100%);
+        color: $black;
+        margin: 0 auto 8px;
+    }
+
+    &__subtitle {
+        font-size: 15px;
+        line-height: calc(20 / 15 * 100%);
+        letter-spacing: 0.12px;
+        margin: 0 0 40px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__description {
+        font-size: 15px;
+        line-height: calc(20 / 15 * 100%);
+        margin: 12px 0 40px;
+    }
+
+    &__btn-descript {
+        font-size: 12px;
+        line-height: calc(16 / 12 * 100%);
+        color: #7d7d91;
+        margin: 6px 0 0;
+    }
+
+    button {
+        background-color: transparent;
+    }
+}

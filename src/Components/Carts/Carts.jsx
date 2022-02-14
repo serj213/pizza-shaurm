@@ -3,9 +3,17 @@ import Container from "../Common/Container/Container";
 import './carts.scss';
 
 
-const Carts = ({ productsList, addCartToBasket, checkoutActive }) => {
+const Carts = ({ productsList, addCartToBasket, checkoutActive, cartBlock }) => {
 
     const [activeTab, setActiveTab] = React.useState(1);
+    const [widthWindow, setWidthWindow] = React.useState(null);
+
+
+    React.useEffect(() => {
+        setWidthWindow(document.body.offsetWidth);
+    }, [])
+
+
     const tabs = [
         { id: 1, name: 'Все позиции' },
         { id: 2, name: 'Шаурма' },
@@ -19,8 +27,9 @@ const Carts = ({ productsList, addCartToBasket, checkoutActive }) => {
     }
 
 
+
     return (
-        <section className="carts">
+        <section ref={cartBlock} className="carts">
             <div className="container">
                 <div className="carts__inner">
                     <div className="carts__top carts-top">
@@ -33,31 +42,44 @@ const Carts = ({ productsList, addCartToBasket, checkoutActive }) => {
                             </div>
                         </div>
 
-                        <div className="tabs__desktop">
-                            <div className="carts-top__tabs tabs">
 
-                                {
-                                    tabs.map(tab => {
-                                        return <div key={tab.id} onClick={() => changeActiveTab(tab.id)}
-                                            className={`tabs__item
+
+                        {
+                            widthWindow > 700 ?
+                                <div className="carts-top__tabs tabs__desktop tabs ">
+                                    {
+                                        tabs.map(tab => {
+                                            return <div key={tab.id} onClick={() => changeActiveTab(tab.id)}
+                                                className={`tabs__item
                                             ${activeTab === tab.id && 'tabs__item--active'}`}>
-                                            {tab.name}
-                                        </div>
-                                    })
-                                }
-                            </div>
-                        </div>
+                                                {tab.name}
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                                :
+                                <div className="tabs__mobile">
+                                    <div className="carts-top__tabs tabs">
+                                        {
+                                            tabs.map(tab => {
+                                                return <div key={tab.id} onClick={() => changeActiveTab(tab.id)}
+                                                    className={`tabs__item
+                                                    ${activeTab === tab.id && 'tabs__item--active'}`}>
+                                                    {tab.name}
+                                                </div>
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                        }
+
+                        {
+
+                        }
 
                     </div>
 
-                    {/* <div className="tabs__mobile">
-                        <div className="carts-top__tabs tabs">
-                            <div className="tabs__item">Шаурма</div>
-                            <div className="tabs__item tabs__item--active">Все позиции</div>
-                            <div className="tabs__item">Пицца</div>
-                            <div className="tabs__item">Напитки</div>
-                        </div>
-                    </div>  */}
+                    {/*  */}
                     <div className={`carts__box ${checkoutActive && 'carts__padding-bottom'}`}>
                         {
                             productsList.map(cart => {

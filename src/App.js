@@ -20,7 +20,22 @@ const App = () => {
   const [modalActive, setModalActive] = React.useState(false);
   const [lenghtBasketItem, setLenghtBasketItem] = React.useState(0);
   const [totalCost, setTotalCost] = React.useState(0);
+  const cartBlock = React.useRef(null);
 
+
+  React.useEffect(() => {
+    
+  }, [])
+
+  const orderWithDeliveryBtn = () => {
+    const positionCartBlock = cartBlock.current.getBoundingClientRect().y;
+    window.scrollTo({
+      top: positionCartBlock - 30,
+      behavior: "smooth"
+
+    });
+
+  }
 
   React.useEffect(() => {
     setProductsLists(products);
@@ -30,6 +45,10 @@ const App = () => {
   React.useEffect(() => {
     setLenghtBasketItem(basketList.length);
     sumPriceCheckout();
+    if (basketList.length === 0) {
+      setCheckoutActive(false);
+      setModalActive(false);
+    }
 
   }, [basketList])
 
@@ -101,6 +120,7 @@ const App = () => {
         setModalActive={setModalActive}
         lenghtBasketItem={lenghtBasketItem}
         totalCost={totalCost}
+        orderWithDeliveryBtn={orderWithDeliveryBtn}
       />
       <Promotion />
       <SpecialOffers />
@@ -108,6 +128,7 @@ const App = () => {
         productsList={productsList}
         addCartToBasket={addCartToBasket}
         checkoutActive={checkoutActive}
+        cartBlock={cartBlock}
       />
 
       {modalActive && <Modal

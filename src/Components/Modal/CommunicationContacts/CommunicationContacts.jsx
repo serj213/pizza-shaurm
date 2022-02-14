@@ -7,7 +7,13 @@ import './communicationContacts.scss';
 
 import upImg from '../../../images/up.png'
 
-const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue, errorValidate }) => {
+const CommunicationContacts = ({
+    phoneNumberValue,
+    setPhoneNumberValue,
+    addressValue,
+    setAddressValue,
+    mobileValidate
+}) => {
 
     const [activeTypePay, setActiveTypePay] = React.useState(0);
 
@@ -21,12 +27,15 @@ const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue, errorVal
     const typePay = ['Картой', 'Наличные'];
     const currentHours = new Date().getHours() + 1;
     let minutes = new Date().getMinutes() + 15;
-    let currentTime = `${currentHours}:${minutes > 60 ? (minutes - 60) : minutes}`
-
+    let currentTime = `${currentHours}:${minutes > 60 ? (minutes - 60) < 10 ? '0' + (minutes - 60) : (minutes - 60) : minutes}`;
 
 
     const onChangePhoneNumber = (e) => {
         setPhoneNumberValue(e.target.value)
+    }
+
+    const onChangeAddressValue = e => {
+        setAddressValue(e.target.value)
     }
 
     return (
@@ -48,7 +57,7 @@ const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue, errorVal
                                 value={phoneNumberValue}
                                 format="+7 (###) ###-##-##"
                                 onChange={onChangePhoneNumber}
-                                className={`${errorValidate && 'input-error'}`}
+                                className={`${mobileValidate() === true && 'input-error'}`}
                             />
                         </div>
 
@@ -57,7 +66,13 @@ const CommunicationContacts = ({ phoneNumberValue, setPhoneNumberValue, errorVal
                                 <span>Адрес доставки <span>*</span></span>
                                 <span></span>
                             </div>
-                            <input placeholder='Введите адрес' type="text" />
+                            <input
+                                placeholder='Введите адрес'
+                                className={`${addressValue.length === 0 && 'input-error'}`}
+                                type="text"
+                                value={addressValue}
+                                onChange={onChangeAddressValue}
+                            />
                         </div>
 
                     </div>

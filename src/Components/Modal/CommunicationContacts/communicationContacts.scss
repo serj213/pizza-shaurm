@@ -1,6 +1,9 @@
 @import "../../../styles/vars.scss";
 
 .contacts-communicate {
+    @media (max-width: $mobile) {
+       
+    }
     &__title {
         font-weight: 800;
         font-size: 26px;
@@ -8,20 +11,39 @@
         padding-bottom: 22px;
         border-bottom: 1px solid #dadae8;
         margin: 0 0 41px;
+
+        @media (max-width: $mobile) {
+            font-size: 24px;
+            margin: 0 0 16px;
+            border: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
 
     &__box {
         display: flex;
+        @media (max-width: $tabletSmall) {
+            overflow-y: auto;
+        }
     }
 
     &__mainInfo {
         flex: 0 0 calc(771 / 1056 * 100%);
+        @media (max-width: $tabletSmall) {
+            flex: 0 0 100%;
+        }
     }
 
     &__top {
         display: flex;
         justify-content: space-between;
         margin: 0 0 40px;
+
+        @media (max-width: $mobile) {
+            display: block;
+            margin: 0 0 16px;
+        }
     }
 
     &__input {
@@ -36,6 +58,12 @@
             ::placeholder {
                 color: $black;
             }
+        }
+    }
+
+    &__input + &__input {
+        @media (max-width: $mobile) {
+            margin-top: 16px;
         }
     }
 
@@ -64,6 +92,10 @@
 
     &__middle {
         margin: 0 0 40px;
+
+        @media (max-width: $mobile) {
+            margin: 0 0 16px;
+        }
     }
 
     &__type {
@@ -93,6 +125,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media (max-width: $tabletSmall) {
+            display: none;
+        }
 
         img {
             display: block;
@@ -143,6 +179,16 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: $mobile) {
+        display: block;
+    }
+
+    &__time {
+        @media (max-width: $mobile) {
+            margin: 0 0 16px;
+        }
+    }
+
     &__input {
         background-color: #f1f1f9;
         border-radius: 2px;
@@ -177,7 +223,9 @@
     }
 }
 
-
-.input-error{
-    border:1px solid red;
+.input-error {
+    &:focus {
+        border: 1px solid transparent;
+    }
+    border: 1px solid red;
 }

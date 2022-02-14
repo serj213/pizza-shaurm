@@ -1,13 +1,7 @@
 @import "../../../styles/vars.scss";
 
 .basket {
-    
-    &__top {
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 13px;
-        border-bottom: 1px solid #dadae8;
-    }
+
 
     &__position,
     &__numbers,
@@ -16,6 +10,10 @@
         font-size: 13px;
         line-height: calc(17 / 13 * 100%);
         color: #acacbe;
+
+        @media (max-width: 900px) {
+            display: none;
+        }
     }
 
     &__name {
@@ -49,97 +47,6 @@
 }
 
 //================ basket-item ============
-
-.basket-item {
-    display: flex;
-    padding: 15px 0 17px;
-    align-items: center;
-    border-bottom: 1px solid #dadae8;
-
-    &__img {
-        display: block;
-        flex: 0 0 100px;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 10px;
-        margin-right: 24px;
-    }
-
-    &__position {
-        flex: 0 0 400px;
-
-        p {
-            max-width: 289px;
-            &:nth-child(1) {
-                font-weight: 600;
-                font-size: 17px;
-                line-height: 100%;
-                color: $black;
-                margin: 0 0 8px;
-            }
-
-            &:nth-child(2) {
-                font-size: 15px;
-                line-height: calc(20 / 15 * 100%);
-                letter-spacing: 0.12px;
-            }
-        }
-    }
-
-    &__numbers {
-        flex: 0 0 217px;
-    }
-
-    .number-itemBasket {
-        background-color: #f1f1f9;
-        height: 34px;
-        width: 110px;
-        border-radius: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        button {
-            display: inline-block;
-            background-color: #f1f1f9;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            font-size: 24px;
-            line-height: 100%;
-            color: $black;
-        }
-        span {
-            background-color: #f1f1f9;
-            font-weight: 700;
-            font-size: 17px;
-            line-height: calc(22 / 17 * 100%);
-            color: $black;
-            margin: 0 16px;
-        }
-    }
-
-    &__price {
-        flex: 0 0 138px;
-        font-size: 13px;
-        line-height: calc(17 / 13 * 100%);
-        color: $black;
-        letter-spacing: 0.12px;
-
-        span {
-            font-weight: 700;
-            font-size: 17px;
-        }
-    }
-
-    &__action {
-        img {
-            cursor: pointer;
-        }
-    }
-}
 
 .basket--active {
     display: flex;

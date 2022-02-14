@@ -14,6 +14,10 @@
 
     &__padding-bottom {
         padding-bottom: 104px;
+
+        @media (max-width: $mobile) {
+            padding-bottom: 80px;
+        }
     }
 }
 
@@ -60,7 +64,6 @@
     display: flex;
 
     @media (max-width: $mobile) {
-        width: 460px;
         margin: 0 auto;
     }
 
@@ -68,8 +71,10 @@
         display: none;
         @media (max-width: $mobile) {
             overflow-x: auto;
-            display: block;
+            display: flex;
+            flex-flow: row nowrap;
             padding-bottom: 10px;
+            width: 100%;
         }
     }
 
@@ -83,6 +88,7 @@
         padding: 15px 20px;
         background-color: $colorSecond;
         border-radius: 10px;
+        white-space: nowrap;
         font-size: 15px;
         line-height: calc(20 / 15 * 100%);
         letter-spacing: 0.12px;
